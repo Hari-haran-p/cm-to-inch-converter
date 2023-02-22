@@ -1,73 +1,32 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+    <title>Length Converter</title>
 </head>
 <body>
-    <style>
-        /* Tooltip container */
-        .tooltip {
-          position: relative;
-          display: inline-block;
-          border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-        }
-        
-        /* Tooltip text */
-        .tooltip .tooltiptext {
-          visibility: hidden;
-          width: 120px;
-          background-color: black;
-          color: #ffffff;
-          text-align: center;
-          padding: 5px 0;
-          border-radius: 6px;
-         
-          /* Position the tooltip text - see examples below! */
-          position: absolute;
-          z-index: 1;
-        }
-        
-        /* Show the tooltip text when you mouse over the tooltip container */
-        .tooltip:hover .tooltiptext {
-          visibility: visible;\
-          .url {cursor: url(myBall.cur),auto;}
-        }
-        
-        </style>
-        
-        <div class="tooltip">Hover over me
-          <span class="tooltiptext">Tooltip text</span>
+    <div id="wrapper">
+        <h2>cm to inches</h2>
+        <div class="inputdiv">
+            <input type="text" id="input" placeholder="length in cm" autocomplete="">
         </div>
-        <p class="url">url</p>
-</body>
-</html> -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    .waiting{
-      cursor: url(img/1.png) auto;
-    }
-    .help{
-      cursor:help;
-    }
-    .crosshair{
-      cursor:crosshair;
-    }
-  </style>
-</head>
-<body>
-  <button class="waiting">waiting</button>
-  <button class="help">help</button>
-  <button class="crosshair">cross</button>
+        <div>
+            <button type="submit" onclick="convert()">Convert to inches</button>
+        </div>
+        <div id="result">
 
-
+        </div>
+    </div>
+    <script>
+      function convert(){
+        const cmVal = Number(document.getElementById("input").value)
+        const inchVal = cmVal/2.54
+        const result = document.getElementById("result")
+        result.innerHTML = inchVal.toFixed(3) + " inches"
+      }
+    </script>
 </body>
 </html>
